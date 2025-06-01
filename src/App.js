@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         <p>
-  Welcome to <strong>WellBlockz</strong> — your wellness & health hub!
-</p>
-        </p>
+        <h1>Welcome to <strong>WellBlockz</strong> 🧬</h1>
+        <p>Your wellness & health hub, powered by blockchain.</p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://wellblockz.pw"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Explore the Platform
         </a>
       </header>
     </div>
@@ -25,3 +20,4 @@ function App() {
 }
 
 export default App;
+
