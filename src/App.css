@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #f0faff; /* soft light blue */
+  background-color: #f0faff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,36 +9,42 @@
   font-family: 'Nunito', sans-serif;
   color: #034f3b;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .App-header {
   background-color: #ffffff;
-  padding: 2rem 3rem;
+  padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 128, 128, 0.08);
-  max-width: 600px;
+  max-width: 90%;
+  width: 500px;
+  box-sizing: border-box;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
   margin-bottom: 2rem;
+  line-height: 1.4;
 }
 
 .App-link {
+  display: inline-block;
   color: #0077b6;
-  text-decoration: none;
-  font-weight: 600;
   background: #e0f7f1;
-  padding: 0.6rem 1.4rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 10px;
-  transition: 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  max-width: 100%;
 }
 
 .App-link:hover {
@@ -46,3 +52,22 @@ p {
   color: #005f8a;
 }
 
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .App-header {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .App-link {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
