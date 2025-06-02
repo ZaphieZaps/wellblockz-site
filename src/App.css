@@ -6,24 +6,12 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
-/* App container with background overlay */
-.App {
-  text-align: center;
-  padding: 2rem;
-  color: #1d3557; /* dark blue text */
-  min-height: 100vh;
-  position: relative;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.5); /* translucent white overlay for readability */
-}
-
 /* Background image */
 .background-image {
-  background-image: url('./assets/bg-landing.png.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.7; /* watermark effect */
+  opacity: 0.6; /* Slightly visible */
   position: fixed;
   top: 0;
   left: 0;
@@ -32,17 +20,65 @@ body, html {
   z-index: 0;
 }
 
+/* Floating animated icons */
+.floating-icons {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.float-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.5;
+  animation: float 20s infinite ease-in-out;
+}
+
+/* Add random delays for floating animation */
+.float-icon:nth-child(1) { animation-delay: 0s; }
+.float-icon:nth-child(2) { animation-delay: 2s; }
+.float-icon:nth-child(3) { animation-delay: 4s; }
+.float-icon:nth-child(4) { animation-delay: 6s; }
+.float-icon:nth-child(5) { animation-delay: 8s; }
+.float-icon:nth-child(6) { animation-delay: 10s; }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+/* App container */
+.App {
+  text-align: center;
+  padding: 2rem;
+  color: #1d3557;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.4); /* reduced white for more background color */
+}
+
 /* Headings */
 .App-header {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* subtle contrast */
 }
 
-/* App buttons */
+/* Buttons */
 .app-button {
   background-color: #a8dadc;
-  color: #ffffff; /* white button text */
+  color: #ffffff;
   border: none;
   padding: 12px 24px;
   margin: 10px;
@@ -58,13 +94,12 @@ body, html {
   transform: scale(1.05);
 }
 
-/* Emoji and descriptions under buttons */
+/* Descriptions under buttons */
 .app-description {
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  color: #1d3557; /* dark blue */
+  color: #1d3557;
   font-weight: bold;
 }
-
 
 
