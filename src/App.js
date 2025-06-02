@@ -1,11 +1,9 @@
 import './App.css';
-import logo from './logo.svg';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="WellBlockz logo" />
         <h1>Welcome to <strong>WellBlockz</strong></h1>
         <p>Your personal wellness and health hub</p>
         <div className="button-container">
@@ -28,7 +26,7 @@ function App() {
             <a className="app-button" href="https://lovable.dev/projects/e41fc67b-4eb6-4c3d-a45d-5bca1bc76d6c" target="_blank" rel="noopener noreferrer">
               🧘 Mental Wellness Journal
             </a>
-            <p className="app-description">Reflect, breathe, and journal your way to peace 🕊️</p>
+            <p className="app-description">Reflect, breathe, and journal your way to peace!</p>
           </div>
 
         </div>
@@ -38,5 +36,6 @@ function App() {
 }
 
 export default App;
+
 
 
