@@ -1,4 +1,4 @@
-/* Reset default browser styling */
+/* Reset */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,11 +10,11 @@ body, html {
 .App {
   text-align: center;
   padding: 2rem;
-  color: #1d3557; /* dark blue text */
+  color: #1d3557;
   min-height: 100vh;
   position: relative;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.5); /* translucent white overlay for readability */
+  background-color: rgba(255, 255, 255, 0.6); /* softened for background image pop */
 }
 
 /* Background image */
@@ -23,7 +23,7 @@ body, html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.7; /* watermark effect */
+  opacity: 0.45; /* slightly more visible background */
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@ body, html {
 /* App buttons */
 .app-button {
   background-color: #a8dadc;
-  color: #ffffff; /* white button text */
+  color: #ffffff;
   border: none;
   padding: 12px 24px;
   margin: 10px;
@@ -58,13 +58,44 @@ body, html {
   transform: scale(1.05);
 }
 
-/* Emoji and descriptions under buttons */
+/* Descriptions under buttons */
 .app-description {
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  color: #1d3557; /* dark blue */
+  color: #1d3557;
   font-weight: bold;
 }
 
+/* Footer styles */
+.footer {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #1d3557;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  z-index: 3;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-links a,
+.footer-contact a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #1d3557;
+  font-weight: 500;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  text-decoration: underline;
+}
 
 
