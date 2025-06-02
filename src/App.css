@@ -1,66 +1,70 @@
 .App {
   text-align: center;
-  background-color: #f0faff;
+  background-color: #f0faff; /* soft blue */
+  color: #1d3557; /* dark blue */
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Segoe UI', sans-serif;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
+  padding: 2rem;
 }
 
 .App-header {
-  background-color: white;
-  border-radius: 16px;
-  padding: 2rem 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  max-width: 500px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #034f3b;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
   font-size: 1.1rem;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.App-link {
-  display: inline-block;
-  text-decoration: none;
-  background-color: #caf0f8;
+.apps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.app-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.2s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+}
+
+.app-card h2 {
   color: #0077b6;
-  padding: 0.75rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #48cae4;
+  border: none;
   border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.3s ease;
-  max-width: 100%;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.App-link:hover {
-  background-color: #ade8f4;
+button:hover {
+  background-color: #0096c7;
 }
 
-/* Responsive styles */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .App-link {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
+@media (max-width: 768px) {
+  .apps-grid {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
