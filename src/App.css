@@ -14,7 +14,7 @@ body, html {
   min-height: 100vh;
   position: relative;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.8); /* translucent white overlay for readability */
+  background-color: rgba(255, 255, 255, 0.5); /* translucent white overlay for readability */
 }
 
 /* Background image */
