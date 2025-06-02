@@ -1,48 +1,25 @@
-/* Reset default browser styling */
-body, html {
-  margin: 0;
-  padding: 0;
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow-x: hidden;
+  width: 100%;
+  background-image: url('./assets/bg-landing.png.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* App container */
-.App {
-  text-align: center;
-  min-height: 100vh;
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* translucent white overlay */
+  z-index: 1;
+  pointer-events: none;
 }
-
-/* Headings */
-.App-header {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-/* App buttons */
-.app-button {
-  background-color: #a8dadc;
-  color: #1d3557;
-  border: none;
-  padding: 12px 24px;
-  margin: 10px;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.app-button:hover {
-  transform: scale(1.05);
-}
-
-/* Emoji and descriptions under buttons */
-.app-description {
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  color: #f1faee;
-}
-
-
 
