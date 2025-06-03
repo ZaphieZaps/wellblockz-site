@@ -1,70 +1,63 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
 }
 
-/* App wrapper */
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 2rem;
-  color: #1d3557; /* dark blue for readability */
-  background-color: rgba(255, 255, 255, 0.7); /* translucent overlay */
-  min-height: 100vh;
+  padding-bottom: 100px;
 }
 
-/* Launch Buttons */
-.app-button {
-  background-color: #1d3557;
-  color: white; /* White button text */
-  border: none;
-  padding: 12px 24px;
-  margin: 10px;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.app-button:hover {
-  transform: scale(1.05);
-}
-
-/* App Descriptions */
-.app-description {
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+.App-header {
+  font-size: 2rem;
+  margin-top: 2rem;
   color: #1d3557;
-  font-weight: bold;
 }
 
-/* Footer */
-.footer {
+.app-button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  font-size: 1rem;
   background-color: #1d3557;
   color: white;
-  padding: 1rem 0;
-  margin-top: 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.app-description {
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background: rgba(255, 255, 255, 0.8);
+  color: #1d3557;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   text-align: center;
+  padding: 1rem 0;
 }
 
 .footer-link {
+  cursor: pointer;
+  color: #1d3557;
   margin-top: 0.5rem;
   text-decoration: underline;
-  cursor: pointer;
-  color: white;
-}
-
-.social-icons {
-  margin: 10px 0;
 }
 
 .social-icons a {
   margin: 0 10px;
-  color: white;
-  font-size: 1.4rem;
-  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
 }
+
 
 
 
