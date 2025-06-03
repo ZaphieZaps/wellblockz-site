@@ -1,115 +1,104 @@
-/* Reset */
-body, html {
+/* App.css */
+
+body, html, .App {
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
   height: 100%;
-  font-family: 'Arial', sans-serif;
+  background-color: #f7f9fc;
 }
 
-/* App Layout */
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  position: relative;
-  z-index: 1;
-}
-
-/* Background */
 .background-image {
-  background-image: url('./assets/bg-landing.png.png');
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.4;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
+  z-index: -1;
+  opacity: 0.08;
 }
 
-/* Overlay Layer */
-.App::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255,255,255,0.6);
-  z-index: 1;
-}
-
-/* Content Container */
-.App > *:not(.background-image) {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 2rem;
-  color: #1d3557;
-  flex: 1;
-}
-
-/* Header */
 .App-header {
+  text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
+  color: #1d3557;
+  margin-top: 2rem;
+  font-weight: 700;
 }
 
-/* Buttons */
+.app-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 1rem;
+}
+
 .app-button {
-  background-color: #a8dadc;
-  color: #ffffff;
+  background-color: #457b9d;
+  color: white;
+  padding: 0.9rem 2rem;
+  margin: 1rem 0 0.3rem;
+  font-size: 1.1rem;
   border: none;
-  padding: 12px 24px;
-  margin: 10px;
   border-radius: 12px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(69, 123, 157, 0.3);
 }
 
 .app-button:hover {
-  transform: scale(1.05);
+  background-color: #1d3557;
 }
 
 .app-description {
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  color: #1d3557;
-  font-weight: bold;
+  color: #555;
+  margin-bottom: 1.2rem;
+  text-align: center;
 }
 
-/* Footer */
 .footer {
-  background-color: rgba(255, 255, 255, 0.7);
-  color: #1d3557;
-  padding: 1rem 0;
+  background-color: #f1f3f8;
+  padding: 2rem 1rem;
   text-align: center;
-  font-size: 0.9rem;
-  z-index: 3;
-  position: relative;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
 }
 
 .footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.footer-links a,
-.footer-contact a {
-  margin: 0 10px;
+.footer p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links {
+  margin: 1rem 0;
+}
+
+.footer-link {
   text-decoration: none;
   color: #1d3557;
-  font-weight: 500;
+  font-weight: bold;
+  transition: color 0.2s;
 }
 
-.footer-links a:hover,
-.footer-contact a:hover {
-  text-decoration: underline;
+.footer-link:hover {
+  color: #457b9d;
+}
+
+.footer-social a {
+  margin: 0 0.5rem;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
 }
