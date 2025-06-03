@@ -1,104 +1,77 @@
-/* App.css */
-
-body, html, .App {
+/* Reset default browser styling */
+body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
   height: 100%;
-  background-color: #f7f9fc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* Background image */
+body {
+  background-image: url('./assets/bg-landing.png.png'); /* adjust if your filename differs */
   background-size: cover;
   background-position: center;
-  z-index: -1;
-  opacity: 0.08;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(255, 255, 255, 0.8); /* fallback */
+}
+
+.App {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.75); /* watermark effect */
+  min-height: 100vh;
+  color: #1d3557; /* dark blue for text */
 }
 
 .App-header {
-  text-align: center;
   font-size: 2.5rem;
-  color: #1d3557;
-  margin-top: 2rem;
-  font-weight: 700;
-}
-
-.app-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 3rem 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .app-button {
-  background-color: #457b9d;
+  background-color: #1d3557;
   color: white;
-  padding: 0.9rem 2rem;
-  margin: 1rem 0 0.3rem;
-  font-size: 1.1rem;
   border: none;
+  padding: 12px 24px;
+  margin: 10px;
   border-radius: 12px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 8px rgba(69, 123, 157, 0.3);
+  transition: transform 0.2s ease;
 }
 
 .app-button:hover {
-  background-color: #1d3557;
+  transform: scale(1.05);
 }
 
 .app-description {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 1.2rem;
-  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #1d3557; /* dark blue */
 }
 
 .footer {
-  background-color: #f1f3f8;
-  padding: 2rem 1rem;
+  background-color: rgba(0, 0, 50, 0.8);
+  color: #f1faee;
+  padding: 1rem;
   text-align: center;
-  border-top: 1px solid #ddd;
-  margin-top: auto;
-}
-
-.footer-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.footer p {
-  color: #666;
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
-}
-
-.footer-links {
-  margin: 1rem 0;
+  margin-top: 3rem;
 }
 
 .footer-link {
-  text-decoration: none;
-  color: #1d3557;
+  display: block;
+  margin-top: 0.5rem;
+  color: #f1faee;
+  text-decoration: underline;
   font-weight: bold;
-  transition: color 0.2s;
 }
 
 .footer-link:hover {
-  color: #457b9d;
+  color: #a8dadc;
 }
 
-.footer-social a {
-  margin: 0 0.5rem;
-  display: inline-block;
-  transition: transform 0.2s;
-}
-
-.footer-social a:hover {
-  transform: scale(1.2);
-}
