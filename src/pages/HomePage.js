@@ -22,7 +22,7 @@ function HomePage() {
         <div className="footer-content">
           <p>© 2025 WellBlockz. All rights reserved.</p>
           <div className="footer-links">
-            <Link to="/blog">Visit Blog 📝</Link>
+            <Link to="/blog" className="footer-link">Visit Blog 📝</Link>
           </div>
           <div className="footer-social">
             <a href="https://x.com/wellblockz" target="_blank" rel="noopener noreferrer">Twitter</a>
@@ -35,4 +35,5 @@ function HomePage() {
 }
 
 export default HomePage;
+
 
