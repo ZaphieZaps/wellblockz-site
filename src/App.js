@@ -16,21 +16,19 @@ function App() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
-        color: '#1d3557',
       }}
     >
-      {page === 'home' ? <HomePage /> : <BlogPage />}
+      {page === 'home' && <HomePage setPage={setPage} />}
+      {page === 'blog' && <BlogPage setPage={setPage} />}
 
       <footer className="footer">
         <p>© 2025 WellBlockz</p>
         <div className="social-icons">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">🐦</a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer">💻</a>
-          <a href="mailto:contact@wellblockz.pw">✉️</a>
+          <a href="mailto:someone@example.com">✉️</a>
         </div>
-        <p className="footer-link" onClick={() => setPage(page === 'home' ? 'blog' : 'home')}>
-          {page === 'home' ? 'Visit our Blog' : 'Back to Home'}
-        </p>
+        <p className="footer-link" onClick={() => setPage('blog')}>Visit our Blog</p>
       </footer>
     </div>
   );
