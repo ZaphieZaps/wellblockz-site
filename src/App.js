@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import bgImage from './assets/bg-landing.png.png';
-import HomePage from './HomePage';
-import BlogPage from './BlogPage';
+import HomePage from './pages/HomePage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   const [page, setPage] = useState('home');
