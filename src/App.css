@@ -1,4 +1,3 @@
-/* Reset default browser styling */
 body, html {
   margin: 0;
   padding: 0;
@@ -6,35 +5,24 @@ body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Background image */
+/* Make background image subtle */
 body {
-  background-image: url('./assets/bg-landing.png.png'); /* adjust if your filename differs */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
+  background-color: #ffffff;
+  height: 100%;
   overflow-x: hidden;
-  background-color: rgba(255, 255, 255, 0.8); /* fallback */
 }
 
 .App {
   text-align: center;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.75); /* watermark effect */
-  min-height: 100vh;
-  color: #1d3557; /* dark blue for text */
+  color: #1d3557; /* dark blue for readability */
+  background-color: rgba(255, 255, 255, 0.6); /* light overlay */
 }
 
-.App-header {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
+/* App buttons */
 .app-button {
   background-color: #1d3557;
-  color: white;
+  color: #ffffff; /* white button text */
   border: none;
   padding: 12px 24px;
   margin: 10px;
@@ -49,29 +37,34 @@ body {
 }
 
 .app-description {
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: 1.5rem;
+  color: #1d3557;
   font-weight: bold;
-  color: #1d3557; /* dark blue */
 }
 
+/* Footer */
 .footer {
-  background-color: rgba(0, 0, 50, 0.8);
-  color: #f1faee;
-  padding: 1rem;
+  background-color: #1d3557;
+  color: white;
   text-align: center;
-  margin-top: 3rem;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
 .footer-link {
   display: block;
-  margin-top: 0.5rem;
-  color: #f1faee;
+  color: #ffffff;
   text-decoration: underline;
-  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
-.footer-link:hover {
-  color: #a8dadc;
+.social-icons a {
+  margin: 0 10px;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
 }
+
 
