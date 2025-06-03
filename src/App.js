@@ -18,7 +18,8 @@ function App() {
         minHeight: '100vh',
       }}
     >
-      {page === 'home' ? <HomePage setPage={setPage} /> : <BlogPage setPage={setPage} />}
+      {page === 'home' && <HomePage setPage={setPage} />}
+      {page === 'blog' && <BlogPage setPage={setPage} />}
 
       <footer className="footer">
         <p>© 2025 WellBlockz</p>
@@ -34,7 +35,6 @@ function App() {
 }
 
 export default App;
-
 
 
 
