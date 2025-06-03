@@ -5,24 +5,19 @@ body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Make background image subtle */
-body {
-  background-color: #ffffff;
-  height: 100%;
-  overflow-x: hidden;
-}
-
+/* App wrapper */
 .App {
   text-align: center;
   padding: 2rem;
   color: #1d3557; /* dark blue for readability */
-  background-color: rgba(255, 255, 255, 0.6); /* light overlay */
+  background-color: rgba(255, 255, 255, 0.7); /* translucent overlay */
+  min-height: 100vh;
 }
 
-/* App buttons */
+/* Launch Buttons */
 .app-button {
   background-color: #1d3557;
-  color: #ffffff; /* white button text */
+  color: white; /* White button text */
   border: none;
   padding: 12px 24px;
   margin: 10px;
@@ -36,6 +31,7 @@ body {
   transform: scale(1.05);
 }
 
+/* App Descriptions */
 .app-description {
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
@@ -47,24 +43,28 @@ body {
 .footer {
   background-color: #1d3557;
   color: white;
-  text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
   margin-top: 2rem;
+  text-align: center;
 }
 
 .footer-link {
-  display: block;
-  color: #ffffff;
+  margin-top: 0.5rem;
   text-decoration: underline;
   cursor: pointer;
-  margin-top: 0.5rem;
+  color: white;
+}
+
+.social-icons {
+  margin: 10px 0;
 }
 
 .social-icons a {
   margin: 0 10px;
-  font-size: 1.2rem;
   color: white;
+  font-size: 1.4rem;
   text-decoration: none;
 }
+
 
 
