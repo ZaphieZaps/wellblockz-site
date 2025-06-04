@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import blogBg from "../assets/blog-background.png";
+import blogBg from "../assets/bg-landing.png.png";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaXTwitter, FaLinkedin, FaFacebookF } from "react-icons/fa6";
 
