@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App" style={appStyle}>
-      <h1 className="App-header">WellBlockz Lovable Apps</h1>
+      <h1 className="App-header">WellBlockz</h1>
 
       <div>
         <button
