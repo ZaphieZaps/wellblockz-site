@@ -1,0 +1,38 @@
+/* src/components/Footer.css */
+.footer {
+  background-color: rgba(0, 0, 50, 0.8); /* Dark blue, slightly transparent */
+  color: #f1faee; /* Light cream/off-white text color */
+  padding: 1rem;
+  text-align: center;
+  margin-top: 3rem; /* Adds space above the footer */
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+
+  /* NEW: Flexbox for vertical alignment within the footer */
+  display: flex;
+  flex-direction: column; /* Stacks children (link, copyright) vertically */
+  align-items: center;   /* Centers children horizontally within the footer */
+  justify-content: center; /* Centers children vertically if there's extra space */
+}
+
+/* Styles for the "Visit our Blog" link within the footer */
+.footer-link {
+  color: #f1faee;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Adds space below the link to separate it from copyright */
+  display: inline-block; /* Allows custom padding/margin and aligns with text-align */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-link:hover {
+  color: #a8dadc; /* Lighter blue on hover */
+  cursor: pointer;
+}
+
+/* NEW: Styles for the copyright text container within the footer */
+.footer-copyright {
+  margin-top: 0.5rem; /* Adds space above the copyright text */
+  /* You can add specific font-size, color, etc., here if different from parent */
+}

@@ -1,14 +1,25 @@
+// src/pages/BlogPage.js
 import React from 'react';
+import bgImage from '../assets/bg-landing.png.png'; // Your background image
+import Footer from '../components/Footer';
 
-function BlogPage({ setPage }) {
+function BlogPage() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>📝 Blog</h1>
+    // UPDATED: Now passing the image URL via a CSS custom property '--bg-image'
+    <div
+      className="App"
+      style={{
+        '--bg-image': `url(${bgImage})`, // This passes the image URL as a CSS variable
+      }}
+    >
+      <h1 className="App-header">📝 Blog</h1>
       <p>Welcome to the WellBlockz blog! Health tips, updates, and more coming soon.</p>
-      <button onClick={() => setPage('home')}>Back to Home</button>
+
+      <Footer />
     </div>
   );
 }
 
 export default BlogPage;
+
 
