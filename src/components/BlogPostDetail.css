@@ -1,0 +1,88 @@
+/* wellblockz-frontend/src/components/BlogPostDetail.css */
+/* Add your CSS for individual blog post pages here */
+
+.blog-detail-container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    line-height: 1.7;
+}
+
+.detail-post-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.blog-detail-container h1 {
+    font-size: 2.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.detail-post-meta {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.detail-post-tags {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: center;
+    font-style: italic;
+}
+
+.detail-post-content {
+    font-size: 1.1em;
+    color: #444;
+}
+
+.detail-post-content h2,
+.detail-post-content h3 {
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.detail-post-content p {
+    margin-bottom: 1em;
+}
+
+.detail-post-content ul,
+.detail-post-content ol {
+    margin-left: 25px;
+    margin-bottom: 1em;
+}
+
+.detail-post-content li {
+    margin-bottom: 0.5em;
+}
+
+/* For images within the content */
+.detail-post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures it doesn't leave space below */
+    margin: 20px auto; /* Centers images within content */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.error-message, .no-post-message {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.2em;
+    padding: 50px;
+}
