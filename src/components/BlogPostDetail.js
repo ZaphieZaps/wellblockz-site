@@ -1,62 +1,77 @@
-// wellblockz-frontend/src/components/BlogPostDetail.js
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'; // Used to get the ID from the URL
-import './BlogPostDetail.css'; // Create this CSS file for styling
+import { useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+
+import './BlogPostDetail.css'; // Assuming you have a CSS file for detail page specific styles
 
 function BlogPostDetail() {
-    const { id } = useParams(); // Get the ID from the URL (e.g., from /blog/12345)
-    const [post, setPost] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const { id } = useParams();
+  const [blogPost, setBlogPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchPost = async () => {
-            try {
-                const response = await fetch(`http://localhost:5000/api/blog/posts/${id}`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                setPost(data);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchPost();
-    }, [id]); // Re-run effect if the 'id' parameter in the URL changes
+  useEffect(() => {
+    const fetchBlogPost = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/blog/posts/${id}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setBlogPost(data);
+      } catch (e) {
+        setError("Failed to load blog post: " + e.message);
+        console.error("Error fetching blog post:", e);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    if (loading) {
-        return <div className="blog-detail-container">Loading blog post...</div>;
+    if (id) {
+      fetchBlogPost();
     }
+  }, [id]);
 
-    if (error) {
-        return <div className="blog-detail-container error-message">Error: {error}</div>;
-    }
+  if (loading) {
+    return <div className="blog-detail-loading">Loading blog post...</div>;
+  }
 
-    if (!post) {
-        return <div className="blog-detail-container no-post-message">Blog post not found.</div>;
-    }
+  if (error) {
+    return <div className="blog-detail-error">{error}</div>;
+  }
 
-    return (
-        <div className="blog-detail-container">
-            {post.imageUrl && (
-                <img src={post.imageUrl} alt={post.title} className="detail-post-image"/>
-            )}
-            <h1>{post.title}</h1>
-            <p className="detail-post-meta">By {post.author} on {new Date(post.createdAt).toLocaleDateString()}</p>
-            {post.tags && post.tags.length > 0 && (
-                <p className="detail-post-tags">Tags: {post.tags.join(', ')}</p>
-            )}
-            {/* WARNING: Using dangerouslySetInnerHTML. 
-            Only use this if you trust the source of 'post.content' (e.g., you are the only one adding content).
-            If content can be user-generated, you must sanitize it to prevent XSS attacks.
-            For rich text editing, consider libraries like React Markdown or TinyMCE/Quill output.
-            */}
-            <div className="detail-post-content" dangerouslySetInnerHTML={{ __html: post.content }}></div>
-        </div>
-    );
+  if (!blogPost) {
+    return <div className="blog-detail-notfound">Blog post not found.</div>;
+  }
+
+  return (
+    <div className="blog-post-detail-container">
+      {/* Display the image/logo from blogPost.imageUrl if it exists */}
+      {blogPost.imageUrl && (
+        <img src={blogPost.imageUrl} alt={blogPost.title} className="blog-post-image" />
+      )}
+
+      <h1>{blogPost.title}</h1>
+      {blogPost.tags && <p className="blog-detail-tags">Tags: {blogPost.tags.join(', ')}</p>}
+      {blogPost.author && <p className="blog-detail-author">By: {blogPost.author}</p>}
+      {blogPost.date && <p className="blog-detail-date">Date: {new Date(blogPost.date).toLocaleDateString()}</p>}
+
+      <hr />
+
+      <div className="blog-detail-content">
+        {blogPost.content && (
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+          >
+            {blogPost.content}
+          </ReactMarkdown>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default BlogPostDetail;

@@ -1,0 +1,43 @@
+/* src/components/NavBar.css */
+.navbar {
+  width: 100%;
+  background-color: #264653; /* Dark blue background for navbar */
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Space below navbar when at top */
+  text-align: center; /* Center the navigation links */
+}
+
+/* Styles for when the navbar is at the bottom */
+.navbar-bottom {
+  position: fixed; /* Fixes it to the viewport */
+  bottom: 0; /* Aligns to the bottom */
+  left: 0;
+  right: 0;
+  margin-bottom: 0; /* No margin at the bottom when fixed */
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center links horizontally */
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #2a9d8f; /* Teal color on hover */
+}

@@ -1,35 +1,50 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// Import your page components
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
-// Assuming BlogPostDetail is now a page component, or you'll manage it within BlogPage
-import BlogPostDetail from './components/BlogPostDetail'; // Keep this path if it's a component
-// OR if you decide to make it a dedicated page:
-// import BlogPostDetailPage from './pages/BlogPostDetailPage'; // New page component for detail
+import BlogPostDetail from './components/BlogPostDetail';
+import Navbar from './components/NavBar'; 
 
-// No Footer import here as it's handled in individual pages (as per your comment)
+import './App.css';
+
+// A component to handle conditional Navbar rendering
+function AppContent() {
+  const location = useLocation(); // Get the current URL pathname
+
+  // Determine if Navbar should be shown at all
+  // Show Navbar if path is NOT exactly '/' (homepage)
+  const showNavbar = location.pathname !== '/'; 
+
+  // Determine if Navbar should be at the bottom
+  // Show at bottom for blog paths
+  const navbarAtBottom = location.pathname.startsWith('/blog');
+
+  return (
+    <div className="App">
+      {/* Navbar rendered at the top by default, but conditionally hidden for homepage */}
+      {!navbarAtBottom && showNavbar && <Navbar />} 
+      
+      {/* Main content area */}
+      <main className={`app-main-content ${navbarAtBottom ? 'content-with-bottom-navbar' : ''}`}> 
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogPostDetail />} />
+          {/* Add other routes here */}
+        </Routes>
+      </main>
+
+      {/* Navbar rendered at the bottom only for blog paths */}
+      {navbarAtBottom && showNavbar && <Navbar />}
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* Route for the Homepage */}
-        <Route path="/" element={<HomePage />} />
-
-        {/* Route for the main Blog page (listing all posts) */}
-        <Route path="/blog" element={<BlogPage />} />
-
-        {/* Route for a single Blog Post Detail page */}
-        {/* This will render the BlogPostDetail component when the URL matches /blog/some-id */}
-        <Route path="/blog/:id" element={<BlogPostDetail />} />
-        {/* If you created a dedicated page for detail:
-        <Route path="/blog/:id" element={<BlogPostDetailPage />} />
-        */}
-
-      </Routes>
+      <AppContent /> {/* Render the conditional content */}
     </Router>
   );
 }

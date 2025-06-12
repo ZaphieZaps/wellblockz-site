@@ -1,6 +1,6 @@
-// src/pages/HomePage.js
+// wellblockz-frontend/src/pages/HomePage.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom'; // REMOVED THIS LINE
 import '../App.css'; // Don't forget to keep importing your CSS
 import bgImage from '../assets/bg-landing.png.png'; // Your background image
 import NewsletterSignup from '../components/NewsletterSignup';
