@@ -26,7 +26,7 @@ function HomePage() {
         <button
           className="app-button"
           onClick={() =>
-            window.open('https://lovable.dev/projects/2093b8f7-c22f-4dee-af81-c22f-4dee-af81-9cceba6f5546', '_blank')
+            window.open('https://lovable.dev/projects/2093b8f7-c22f-4dee-af81-9cceba6f5546', '_blank')
           }
         >
           Launch Hair Journey Tracker 💇‍♀️

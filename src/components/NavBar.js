@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import './NavBar.css';
 
-function Navbar() {
+function NavBar() {
   const location = useLocation();
   // Add a class if the path starts with /blog to apply bottom styling
   const isBlogPage = location.pathname.startsWith('/blog');
@@ -12,7 +12,7 @@ function Navbar() {
     <nav className={`navbar ${isBlogPage ? 'navbar-bottom' : ''}`}> {/* Add conditional class */}
       <ul className="navbar-links">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Home</Link> {/* <--- THIS IS THE "HOME" LINK */}
         </li>
         <li>
           <Link to="/blog">Blog</Link>
@@ -23,4 +23,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;
